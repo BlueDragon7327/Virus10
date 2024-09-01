@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Stellar Vibes</title>
+    <style>
+        /* Basic Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle, #000000 0%, #2a2a2a 100%);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(28, 28, 28, 0.9);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ff4f4f;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            background: linear-gradient(45deg, #ff4f4f, #e03e3e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glowing 1.5s ease-in-out infinite alternate, moveText 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowing {
+            0% { text-shadow: 0 0 10px rgba(255, 80, 80, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 80, 80, 0.8); }
+        }
+
+        @keyframes moveText {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        nav {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #ff4f4f;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e03e3e;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e03e3e;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .content {
+            margin-bottom: 2rem;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #ff4f4f;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e03e3e;
+            background: linear-gradient(45deg, #ff4f4f, #e03e3e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textSlide 1s ease-in-out;
+        }
+
+        @keyframes textSlide {
+            0% { transform: translateX(-10px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .content p {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .download-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .download-links a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff4f4f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-links a:hover {
+            background: #e03e3e;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #ff4f4f;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #ff4f4f;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #e03e3e;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .download-links a {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Stellar Vibes</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="downloads.html">Downloads</a>
+        </nav>
+        <div class="content">
+            <h2>Download Our Resources</h2>
+            <p>
+                Explore and download our resources to get started with Stellar Vibes. Choose the files you need from the links below and enhance your experience with our content.
+            </p>
+            <div class="download-links">
+                <a href="files/guide.pdf" download>Download Guide PDF</a>
+                <a href="files/sample.zip" download>Download Sample ZIP</a>
+                <a href="files/cheat-sheet.pdf" download>Download Cheat Sheet</a>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Stellar Vibes. All rights reserved. <a href="#">Privacy Policy</a></p>
+        </footer>
+    </div>
+</body>
+</html>
